@@ -12,7 +12,7 @@
 // wrap geos.h import to silence geos gcc warnings
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-prototypes"
-#include <geos_c.h>
+#include "geos_c.h"
 #pragma GCC diagnostic pop
 
 /* Macros to setup GEOS Context and error handlers
