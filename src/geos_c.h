@@ -83,7 +83,7 @@ extern "C" {
 
 /** \endcond */
 
-#include <geos/export.h>
+#include "export.h"
 
 
 /**
