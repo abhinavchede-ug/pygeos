@@ -290,7 +290,7 @@ char check_to_wkt_compatible(GEOSContextHandle_t ctx, GEOSGeometry* geom) {
   }
 }
 
-#if GEOS_SINCE_3_9_0
+#if defined(GEOS_SINCE_3_9_0)
 
 /* Checks whether the geometry is a 3D empty geometry and, if so, create the WKT string
  *
@@ -453,7 +453,7 @@ int get_bounds(GEOSContextHandle_t ctx, GEOSGeometry* geom, double* xmin, double
     return 1;
   }
 
-#if GEOS_SINCE_3_7_0
+#if defined(GEOS_SINCE_3_7_0)
   // use min / max coordinates
 
   if (!(GEOSGeom_getXMin_r(ctx, geom, xmin) && GEOSGeom_getYMin_r(ctx, geom, ymin) &&
@@ -640,7 +640,7 @@ GEOSGeometry* create_box(GEOSContextHandle_t ctx, double xmin, double ymin, doub
  * GEOSGeometry* on success (owned by caller) or NULL on failure
  */
 GEOSGeometry* create_point(GEOSContextHandle_t ctx, double x, double y) {
-#if GEOS_SINCE_3_8_0
+#if defined(GEOS_SINCE_3_8_0)
   return GEOSGeom_createPointFromXY_r(ctx, x, y);
 #else
   GEOSCoordSequence* coord_seq = NULL;
@@ -890,7 +890,7 @@ GEOSCoordSequence* coordseq_from_buffer(GEOSContextHandle_t ctx, const double* b
   unsigned int i, j;
   double first_coord;
 
-#if GEOS_SINCE_3_10_0
+#if defined(GEOS_SINCE_3_10_0)
 
   if (!ring_closure) {
     if ((cs1 == dims * 8) && (cs2 == 8)) {
