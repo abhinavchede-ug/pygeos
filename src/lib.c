@@ -70,7 +70,7 @@ PyMODINIT_FUNC PyInit_lib(void) {
 
   /* export the GEOS versions as python tuple and string */
   PyModule_AddObject(m, "geos_version",
-                     PyTuple_Pack(3, PyLong_FromLong((long)GEOS_VERSION_MAJOR),
+                     PyTuple_Pack(3, PyLong_FromLong((long)defined(GEOS_VERSION_MAJOR)),
                                   PyLong_FromLong((long)GEOS_VERSION_MINOR),
                                   PyLong_FromLong((long)geos_version_patch_int)));
   PyModule_AddObject(m, "geos_capi_version",
@@ -98,4 +98,5 @@ PyMODINIT_FUNC PyInit_lib(void) {
   }
 
   return m;
+}
 }
